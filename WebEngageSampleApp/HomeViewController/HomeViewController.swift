@@ -14,6 +14,7 @@ class HomeViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), primaryAction: nil, menu: menuItems())
     }
     
@@ -24,14 +25,12 @@ class HomeViewController: UICollectionViewController {
     }
 
     private func menuItems() -> UIMenu {
-        let addMenuItems = UIMenu(title: "Logged in as: sn_ios",options: .displayInline, children: [
+        let cuid = UserDefaults.standard.string(forKey: Constants.login) ?? "user"
+        let addMenuItems = UIMenu(title: "Logged in as: \(cuid)",options: .displayInline, children: [
             UIAction (title: "Logout") { [unowned self] (_) in
                 WebEngage.sharedInstance()?.user.logout()
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Login", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier:"LoginViewController") as!
-                    LoginViewController
-                nextViewController.modalPresentationStyle = .fullScreen
-                self.present(nextViewController, animated:true, completion:nil)
+                UserDefaults.standard.set("", forKey: Constants.login)
+                self.navigationController?.popViewController(animated: true)
             }
         ])
         return addMenuItems
@@ -41,12 +40,9 @@ class HomeViewController: UICollectionViewController {
         items.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
-        
-        if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? HomeViewCell {
-            itemCell.configure(with: items[indexPath.row])
-            cell = itemCell
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCVC", for: indexPath) as? CustomCVC else {return UICollectionViewCell()}
+        cell.itemName = items[indexPath.row]
+        cell.configure(with: items[indexPath.row])
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

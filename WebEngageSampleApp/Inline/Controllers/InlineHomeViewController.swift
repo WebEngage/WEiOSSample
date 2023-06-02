@@ -8,16 +8,15 @@
 import UIKit
 import WebEngage
 import WEPersonalization
-class InlineHomeViewController: UIViewController {
-    struct Constants {
-        
-        static let login = "UserDefaults.loginID"
-        static let badgeSize: CGFloat = 18
-        static let badgeTag: Int = 12
-    }
+struct Constants {
+    static let login = "UserDefaults.loginID"
+    static let badgeSize: CGFloat = 18
+    static let badgeTag: Int = 12
+}
 
+
+class InlineHomeViewController: UIViewController {
     @IBOutlet weak var tvCuid: UITextField!
-    
     @IBOutlet weak var cuidLabel: UILabel!
     @IBOutlet weak var btnLoginLogout: UIButton!
     @IBOutlet weak var switchAutoClick: UISwitch!

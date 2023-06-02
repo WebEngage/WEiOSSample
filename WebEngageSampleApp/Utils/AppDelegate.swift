@@ -13,8 +13,8 @@ import WEPersonalization
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        WebEngage.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        WebEngage.sharedInstance().application(application,didFinishLaunchingWithOptions: launchOptions, notificationDelegate: self)
+        WebEngage.sharedInstance().sessionTimeOut = 25
         WEPersonalization.shared.initialise()
         return true
     }
