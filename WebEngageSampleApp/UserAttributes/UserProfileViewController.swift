@@ -10,7 +10,17 @@ import UIKit
 import WebEngage
 
 class UserProfileViewController: UIViewController {
-
+    
+    // Switch Declarations
+    @IBOutlet weak var inAppSwitch: UISwitch!
+    @IBOutlet weak var smsSwitch: UISwitch!
+    @IBOutlet weak var emailSwitch: UISwitch!
+    @IBOutlet weak var pushSwitch: UISwitch!
+    @IBOutlet weak var whatsAppSwitch: UISwitch!
+    @IBOutlet weak var viberSwitch: UISwitch!
+    
+    // textField Declaration
+    
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -21,17 +31,67 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var birthDateField: UITextField!
     @IBOutlet weak var genderField: UITextField!
     @IBOutlet weak var locationField: UITextField!
-
+    
     @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     override func viewDidLoad() {
         
         title = "User Attributes"
-        
+        setUpLoadedData()
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
         navigationItem.rightBarButtonItem = saveButton
     }
+    
+    func setUpLoadedData() {
+        if let firstName = UserDefaults.standard.string(forKey: "firstName")
+        {
+            firstNameField.text = firstName
+        }
+        if let lastName = UserDefaults.standard.string(forKey: "lastName") {
+            lastNameField.text = lastName
+        }
+        if let email = UserDefaults.standard.string(forKey: "email") {
+            emailField.text = email
+        }
+        if let hashedEmail = UserDefaults.standard.string(forKey: "hashedEmail") {
+            hashedEmailField.text = hashedEmail
+        }
+        if let phoneNumberField = UserDefaults.standard.string(forKey: "phone") {
+            phoneField.text = phoneNumberField
+        }
+        if let hashedPhone = UserDefaults.standard.string(forKey: "hashedPhone") {
+            hashedPhoneField.text = hashedPhone
+        }
+        if let company = UserDefaults.standard.string(forKey: "company") {
+            companyField.text = company
+        }
+        if let dob = UserDefaults.standard.string(forKey: "DOB") {
+            birthDateField.text = dob
+        }
+        if let lat = UserDefaults.standard.string(forKey: "lat"), let long = UserDefaults.standard.string(forKey: "long")   {
+            locationField.text = "\(lat),\(long)"
+        }
+        if let gender = UserDefaults.standard.string(forKey: "gender") {
+            genderField.text = gender
+        }
+        if let isPushOn = UserDefaults.standard.object(forKey: "push") {
+            pushSwitch.isOn = (isPushOn as? Bool) ?? true
+        }
+        if let isInAppOn = UserDefaults.standard.object(forKey: "inApp") {
+            inAppSwitch.isOn = (isInAppOn as? Bool) ?? true
+        }
+        if let isSmsOn = UserDefaults.standard.object(forKey: "sms") {
+            smsSwitch.isOn = (isSmsOn as? Bool) ?? true
+        }
+        if let isEmailOn = UserDefaults.standard.object(forKey: "emailSwitch") {
+            emailSwitch.isOn = (isEmailOn as? Bool) ?? true
+        }
+        if let isWhatsAppOn = UserDefaults.standard.object(forKey: "whatsApp") {
+            whatsAppSwitch.isOn = (isWhatsAppOn as? Bool) ?? true
+        }
+    }
+    
 }
 
 
@@ -41,38 +101,47 @@ extension UserProfileViewController {
     @objc func saveTapped() {
         if !(firstNameField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setFirstName(firstNameField.text)
+            UserDefaults.standard.set(firstNameField.text, forKey: "firstName")
         }
 
         if !(lastNameField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setLastName(lastNameField.text)
+            UserDefaults.standard.set(lastNameField.text, forKey: "lastName")
         }
 
         if !(emailField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setEmail(emailField.text)
+            UserDefaults.standard.set(emailField.text, forKey: "email")
         }
 
         if !(hashedEmailField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setHashedEmail(hashedEmailField.text)
+            UserDefaults.standard.set(hashedEmailField.text, forKey: "hashedEmail")
         }
 
         if !(phoneField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setPhone(phoneField.text)
+            UserDefaults.standard.set(phoneField.text, forKey: "phone")
         }
 
         if !(hashedPhoneField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setHashedPhone(hashedPhoneField.text)
+            UserDefaults.standard.set(hashedPhoneField.text, forKey: "hashedPhone")
         }
 
         if !(companyField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setCompany(companyField.text)
+            UserDefaults.standard.set(companyField.text, forKey: "company")
         }
 
         if !(birthDateField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setBirthDateString(birthDateField.text)
+            UserDefaults.standard.set(birthDateField.text, forKey: "DOB")
         }
 
         if !(genderField.text?.isEmpty)! {
             WebEngage.sharedInstance()?.user.setGender(genderField.text)
+            UserDefaults.standard.set(genderField.text, forKey: "gender")
         }
 
         if !(locationField.text?.isEmpty)! {
@@ -94,6 +163,8 @@ extension UserProfileViewController {
             }
 
             WebEngage.sharedInstance()?.user.setUserLocationWithLatitude(NSNumber(value: lat), andLongitude: NSNumber(value: long))
+            UserDefaults.standard.set(lat, forKey: "lat")
+            UserDefaults.standard.set(long, forKey: "long")
         }
 
         let alert = UIAlertController.init(title: "User Profile Updated!", message: nil, preferredStyle: .alert)
@@ -111,22 +182,28 @@ extension UserProfileViewController {
 
     @IBAction func pushOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.push, status: sender.isOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "push")
+        
     }
 
     @IBAction func inAppOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.inApp, status: sender.isOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "inApp")
     }
 
     @IBAction func smsOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.SMS, status: sender.isOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "sms")
     }
 
     @IBAction func emailOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.email, status: sender.isOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "emailSwitch")
     }
     
     @IBAction func whatsAppOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.whatsapp, status: sender.isOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "whatsApp")
     }
   
 //    @IBAction func viberOptInChanged(_ sender: UISwitch) {

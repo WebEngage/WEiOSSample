@@ -232,7 +232,7 @@
                                             <action selector="whatsAppOptInChanged:" destination="bYZ-BC-zE4" eventType="valueChanged" id="KjI-Bl-QKG"/>
                                         </connections>
                                     </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3o-2R-Lsf" userLabel="Viber">
+                                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3o-2R-Lsf" userLabel="Viber">
                                         <rect key="frame" x="314" y="661" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="Dib-Ps-gzg"/>
@@ -248,7 +248,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-UM-sEf">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-UM-sEf">
                                         <rect key="frame" x="216" y="661" width="80" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="XWe-yq-4e2"/>
@@ -395,13 +395,19 @@
                         <outlet property="birthDateField" destination="gBj-93-AdP" id="sDJ-Qp-J27"/>
                         <outlet property="companyField" destination="T3l-qs-jQ1" id="EGp-C3-2u3"/>
                         <outlet property="emailField" destination="KfL-io-6uw" id="lSS-Ts-W6p"/>
+                        <outlet property="emailSwitch" destination="FW8-vQ-A2A" id="Mwg-iK-Eyb"/>
                         <outlet property="firstNameField" destination="UE2-zK-pV3" id="faK-9J-KWh"/>
                         <outlet property="genderField" destination="Ywm-6G-VZF" id="2hA-jJ-Wo1"/>
                         <outlet property="hashedEmailField" destination="BAg-ey-Udy" id="2Kw-Tl-Jly"/>
                         <outlet property="hashedPhoneField" destination="qYK-Th-Kp4" id="cSs-eE-o14"/>
+                        <outlet property="inAppSwitch" destination="CfW-ze-bDY" id="Pys-yq-hHJ"/>
                         <outlet property="lastNameField" destination="4yD-FI-d7B" id="YZw-iD-XP9"/>
                         <outlet property="locationField" destination="S8A-D3-VyF" id="b8G-jt-UAH"/>
                         <outlet property="phoneField" destination="ebr-Na-gYx" id="c6G-9o-rg0"/>
+                        <outlet property="pushSwitch" destination="6Me-0f-G1b" id="sNq-Lo-u2f"/>
+                        <outlet property="smsSwitch" destination="04i-0I-Dk0" id="9z0-iz-CIf"/>
+                        <outlet property="viberSwitch" destination="S3o-2R-Lsf" id="U1M-GH-Ybm"/>
+                        <outlet property="whatsAppSwitch" destination="BbX-Vm-m71" id="R4w-qD-uLU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvE-bq-LYl" userLabel="First Responder" sceneMemberID="firstResponder"/>

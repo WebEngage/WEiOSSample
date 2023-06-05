@@ -9,8 +9,13 @@ import UIKit
 import WebEngage
 
 class HomeViewController: UICollectionViewController {
+    
+    //MARK: Outlet Initializations
+    
+    
+    // Array to contain the show the options
 
-    let items = ["Track Events", "User Attributes", "InLine", "App Inbox"]
+    let items = ["Track Events","Track Screens", "User Attributes", "InLine", "App Inbox"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,6 +59,12 @@ class HomeViewController: UICollectionViewController {
                     navigationController?.pushViewController(eventsViewController, animated: true)
                 }
             
+        case "Track Screens" :
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Screens", bundle: nil)
+            if let trackScreensViewController = storyBoard.instantiateViewController(withIdentifier: "ScreensViewController") as? ScreensViewController {
+                navigationController?.pushViewController(trackScreensViewController, animated: true)
+            }
+            
            case "User Attributes":
                 let storyBoard: UIStoryboard = UIStoryboard(name: "UserProfile", bundle: nil)
                 if let userProfileViewController = storyBoard.instantiateViewController(withIdentifier: "UserProfileViewController") as? UserProfileViewController {
@@ -68,6 +79,10 @@ class HomeViewController: UICollectionViewController {
             }
             
            case "App Inbox":
+            let storyBoard: UIStoryboard = UIStoryboard(name: "AppInbox", bundle: nil)
+            if let appInboxViewController = storyBoard.instantiateViewController(withIdentifier: "AppInboxViewController") as? AppInboxViewController {
+                navigationController?.pushViewController(appInboxViewController, animated: true)
+            }
                 print("AppInbox")
            default:
                print("Invalid item")
