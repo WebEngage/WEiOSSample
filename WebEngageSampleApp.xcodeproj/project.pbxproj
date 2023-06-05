@@ -24,7 +24,6 @@
 		3EDCB7F62A260D3600F24C6A /* Inline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB7EC2A260D3600F24C6A /* Inline.storyboard */; };
 		3EDCB7F72A260D3600F24C6A /* ScreenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7EF2A260D3600F24C6A /* ScreenDetailViewController.swift */; };
 		3EDCB7F82A260D3600F24C6A /* InlineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7F02A260D3600F24C6A /* InlineListViewController.swift */; };
-		3EDCB7F92A260D3600F24C6A /* InlineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7F12A260D3600F24C6A /* InlineHomeViewController.swift */; };
 		3EDCB7FA2A260D3600F24C6A /* CustomScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7F22A260D3600F24C6A /* CustomScreenViewController.swift */; };
 		3EDCB80E2A26F9BD00F24C6A /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB80D2A26F9BD00F24C6A /* UserProfile.storyboard */; };
 		3EDCB8102A26F9DD00F24C6A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB80F2A26F9DD00F24C6A /* UserProfileViewController.swift */; };
@@ -99,7 +98,6 @@
 		3EDCB7ED2A260D3600F24C6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Inline.storyboard; sourceTree = "<group>"; };
 		3EDCB7EF2A260D3600F24C6A /* ScreenDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenDetailViewController.swift; sourceTree = "<group>"; };
 		3EDCB7F02A260D3600F24C6A /* InlineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineListViewController.swift; sourceTree = "<group>"; };
-		3EDCB7F12A260D3600F24C6A /* InlineHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineHomeViewController.swift; sourceTree = "<group>"; };
 		3EDCB7F22A260D3600F24C6A /* CustomScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScreenViewController.swift; sourceTree = "<group>"; };
 		3EDCB80D2A26F9BD00F24C6A /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		3EDCB80F2A26F9DD00F24C6A /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 			children = (
 				3EDCB7EF2A260D3600F24C6A /* ScreenDetailViewController.swift */,
 				3EDCB7F02A260D3600F24C6A /* InlineListViewController.swift */,
-				3EDCB7F12A260D3600F24C6A /* InlineHomeViewController.swift */,
 				3EDCB7F22A260D3600F24C6A /* CustomScreenViewController.swift */,
 			);
 			path = Controllers;
@@ -623,7 +620,6 @@
 				D3F76A7A2A2A19AF00F33F82 /* ScreensViewController.swift in Sources */,
 				3EDCB7F72A260D3600F24C6A /* ScreenDetailViewController.swift in Sources */,
 				3EDCB7DE2A26034700F24C6A /* EventsViewController.swift in Sources */,
-				3EDCB7F92A260D3600F24C6A /* InlineHomeViewController.swift in Sources */,
 				3EDCB7FA2A260D3600F24C6A /* CustomScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

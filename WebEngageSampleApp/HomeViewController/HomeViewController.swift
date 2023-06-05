@@ -37,16 +37,18 @@ class HomeViewController: UICollectionViewController {
     
     // To setup the menu by which user can log out and see their username.
     
-    private func menuItems() -> UIMenu {
-        let cuid = UserDefaults.standard.string(forKey: Constants.login) ?? "user"
-        let addMenuItems = UIMenu(title: "Logged in as: \(cuid)",options: .displayInline, children: [
-            UIAction (title: "Logout") { (_) in
-                WebEngage.sharedInstance()?.user.logout()
-                UserDefaults.standard.set("", forKey: Constants.login)
-                Helper.shared.setInitialViewController()
-            }
-        ])
-        return addMenuItems
+    private func menuItems() -> UIMenu? {
+        if let cuid = UserDefaults.standard.string(forKey: Keys.cuid.rawValue){
+            let addMenuItems = UIMenu(title: "Logged in as: \(cuid)",options: .displayInline, children: [
+                UIAction (title: "Logout") { (_) in
+                    WebEngage.sharedInstance()?.user.logout()
+                    UserDefaults.standard.removeObject(forKey: Keys.cuid.rawValue)
+                    Helper.shared.setInitialViewController()
+                }
+            ])
+            return addMenuItems
+        }
+        return nil
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

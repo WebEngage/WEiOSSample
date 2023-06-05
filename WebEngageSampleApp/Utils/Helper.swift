@@ -7,6 +7,9 @@
 
 import Foundation
 
+enum Keys:String{
+    case cuid
+}
 
 class Helper: NSObject {
     
@@ -39,12 +42,13 @@ class Helper: NSObject {
             }
         }
     }
+    
     func getRootViewController() -> (UIViewController?) {
       
         let storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
         var vcToNaviagte:UIViewController?
-        let loginDetail = UserDefaults.standard.value(forKey: Constants.login) as! String
-        if loginDetail != ""{
+       if let cuid = UserDefaults.standard.value(forKey: Keys.cuid.rawValue) as? String,
+          !cuid.isEmpty{
             vcToNaviagte = storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
         } else {
             vcToNaviagte = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
@@ -53,4 +57,5 @@ class Helper: NSObject {
         return navigation
     }
 }
+
 

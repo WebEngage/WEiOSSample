@@ -29,13 +29,14 @@ class LoginViewController: UIViewController {
         } else {
             WebEngage.sharedInstance().user.login(cuid)
         }
-        UserDefaults.standard.set(cuid, forKey: Constants.login)
+        UserDefaults.standard.set(cuid, forKey: Keys.cuid.rawValue)
         guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
-        if let text = sender.text, (text.isEmpty) {
+        if let text = sender.text,
+           text.replacingOccurrences(of: " ", with: "").isEmpty{
             disableButton(button: logInButtonOutlet)
         }
         
