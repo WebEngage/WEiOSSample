@@ -38,12 +38,12 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         
         title = "User Attributes"
-        setUpLoadedData()
+        setUpSavedData()
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
         navigationItem.rightBarButtonItem = saveButton
     }
     
-    func setUpLoadedData() {
+    func setUpSavedData() {
         if let firstName = UserDefaults.standard.string(forKey: "firstName")
         {
             firstNameField.text = firstName
@@ -206,6 +206,8 @@ extension UserProfileViewController {
         UserDefaults.standard.set(sender.isOn, forKey: "whatsApp")
     }
   
+  //MARK: Viber is not available as of now.
+    
 //    @IBAction func viberOptInChanged(_ sender: UISwitch) {
 //        WebEngage.sharedInstance()?.user.setOptInStatusFor(.viber, status: sender.isOn)
 //    }

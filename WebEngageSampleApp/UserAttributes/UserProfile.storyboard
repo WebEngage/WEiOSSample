@@ -406,7 +406,6 @@
                         <outlet property="phoneField" destination="ebr-Na-gYx" id="c6G-9o-rg0"/>
                         <outlet property="pushSwitch" destination="6Me-0f-G1b" id="sNq-Lo-u2f"/>
                         <outlet property="smsSwitch" destination="04i-0I-Dk0" id="9z0-iz-CIf"/>
-                        <outlet property="viberSwitch" destination="S3o-2R-Lsf" id="U1M-GH-Ybm"/>
                         <outlet property="whatsAppSwitch" destination="BbX-Vm-m71" id="R4w-qD-uLU"/>
                     </connections>
                 </viewController>

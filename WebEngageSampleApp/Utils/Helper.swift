@@ -28,5 +28,29 @@ class Helper: NSObject {
         return topViewController
     }
     
+    func setInitialViewController(){
+        DispatchQueue.main.async {
+            if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first{
+                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                appDelegate.window = window
+                let rootVC = self.getRootViewController()
+                window.rootViewController = rootVC
+                window.makeKeyAndVisible()
+            }
+        }
+    }
+    func getRootViewController() -> (UIViewController?) {
+      
+        let storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
+        var vcToNaviagte:UIViewController?
+        let loginDetail = UserDefaults.standard.value(forKey: Constants.login) as! String
+        if loginDetail != ""{
+            vcToNaviagte = storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+        } else {
+            vcToNaviagte = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
+        }
+        let navigation = UINavigationController(rootViewController: vcToNaviagte ?? UIViewController())
+        return navigation
+    }
 }
 

@@ -11,10 +11,15 @@ import WEPersonalization
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Here we are are initializing the WebEngage SDK.
         WebEngage.sharedInstance().application(application,didFinishLaunchingWithOptions: launchOptions, notificationDelegate: self)
+        // Here we are setting the session time out
         WebEngage.sharedInstance().sessionTimeOut = 25
+        // Here we are initializing the WebEngage Personalization.
         WEPersonalization.shared.initialise()
         return true
     }
