@@ -8,16 +8,17 @@
 import UIKit
 import WebEngage
 
-class EventsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Track Events"
-    }
+class TrackEventsViewController: UIViewController {
+    
     @IBOutlet weak var textField: UITextField! {
         didSet {
             textField.becomeFirstResponder()
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Track Events"
     }
 
     private func presentEventSuccessAlert(for event: String) {
@@ -34,11 +35,11 @@ class EventsViewController: UIViewController {
 }
 
 // MARK: - Single Event Handler
-extension EventsViewController {
+extension TrackEventsViewController {
 
     @IBAction func trackEventTapped(_ sender: UIButton) {
 
-        if let event = textField.text, !event.isEmpty {
+        if let event = textField.text, !event.replacingOccurrences(of: " ", with: "").isEmpty {
             WebEngage.sharedInstance()?.analytics.trackEvent(withName: event)
             self.presentEventSuccessAlert(for: event)
         } else {
@@ -49,7 +50,7 @@ extension EventsViewController {
 }
 
 // MARK: - Custom Events Handlers
-extension EventsViewController {
+extension TrackEventsViewController {
 
     @IBAction func trackCustomEventTapped(_ sender: UIButton) {
 
@@ -71,7 +72,7 @@ extension EventsViewController {
             let key = alert.textFields![0].text
             let value = alert.textFields![1].text
 
-            guard (key != nil), (value != nil), !((key?.isEmpty)!), !((value?.isEmpty)!) else {
+            guard (key != nil), (value != nil), !((key?.replacingOccurrences(of: " ", with: "").isEmpty)!), !((value?.replacingOccurrences(of: " ", with: "").isEmpty)!) else {
                 self.presentCustomEventFail(key: key, value: value)
                 return
             }

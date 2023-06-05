@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         guard let cuid = cuidTextField.text, !(cuid.isEmpty)else {
             return
         }
-        if let jwtToken = jwtTokenTextField.text, !(jwtToken.isEmpty) {
+        if let jwtToken = jwtTokenTextField.text, !(jwtToken.replacingOccurrences(of: " ", with: "").isEmpty) {
             WebEngage.sharedInstance().user.login(cuid, jwtToken: jwtToken)
         } else {
             WebEngage.sharedInstance().user.login(cuid)

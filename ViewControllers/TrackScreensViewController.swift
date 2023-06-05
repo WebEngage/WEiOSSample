@@ -9,7 +9,7 @@
 import UIKit
 import WebEngage
 
-class ScreensViewController: UIViewController {
+class TrackScreensViewController: UIViewController {
 
     @IBOutlet weak var screenField: UITextField! {
         didSet {
@@ -31,7 +31,7 @@ class ScreensViewController: UIViewController {
 
     @IBAction func setScreenNameTapped(_ sender: UIButton) {
 
-        guard let text = screenField.text, !text.isEmpty else {
+        guard let text = screenField.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
             self.showFailAlert(key: screenField.text, value: nil, type: "name")
             return
         }
@@ -42,7 +42,7 @@ class ScreensViewController: UIViewController {
 
     @IBAction func setScreenDataTapped(_ sender: UIButton) {
 
-        guard let text = dataField.text, !text.isEmpty else {
+        guard let text = dataField.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
             self.showFailAlert(key: dataField.text, value: nil, type: "data")
             return
         }

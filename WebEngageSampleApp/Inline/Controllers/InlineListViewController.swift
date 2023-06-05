@@ -16,7 +16,7 @@ class InlineListViewController: UIViewController {
     ]
     let images = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
-    var inlineScreenData : InlineScreenData = Storage.instance.currentSelectedScreen!
+    var inlineScreenData : InlineScreenData = Helper.shared.currentSelectedScreen!
     var weAnalytics = WebEngage.sharedInstance().analytics
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +40,7 @@ class InlineListViewController: UIViewController {
             currentData: inlineScreenData,
             actionHandler:
                 { (input:InlineScreenData) in
-                    Storage.instance.currentSelectedScreen = input
+                    Helper.shared.currentSelectedScreen = input
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "InlineListViewController")
                     self.navigationController?.pushViewController(vc!, animated: true)
                 })
@@ -59,7 +59,7 @@ class InlineListViewController: UIViewController {
 
             let event = alert.textFields![0].text
 
-            guard let eventName = event, (event != nil), !((event?.isEmpty)!)else {
+            guard let eventName = event, (event != nil), !((event?.replacingOccurrences(of: " ", with: "").isEmpty)!)else {
                 self.presentEventFailAlert(for: event)
                 return
             }
@@ -93,7 +93,7 @@ class InlineListViewController: UIViewController {
             let key = alert.textFields![0].text
             let value = alert.textFields![1].text
 
-            guard (key != nil), (value != nil), !((key?.isEmpty)!), !((value?.isEmpty)!) else {
+            guard (key != nil), (value != nil), !((key?.replacingOccurrences(of: " ", with: "").isEmpty)!), !((value?.replacingOccurrences(of: " ", with: "").isEmpty)!) else {
                 self.presentCustomEventFail(key: key, value: value)
                 return
             }

@@ -27,8 +27,9 @@ class ScreenDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screenList = Storage.instance.getListOfScreen()
-        inlineScreenData = screenList[Storage.instance.currentInlineScreenDataPosition]
+      
+        screenList = Helper.shared.getListOfScreen()
+        inlineScreenData = screenList[Helper.shared.currentInlineScreenDataPosition]
         inlineDataTableView.dataSource = self
         inlineDataTableView.delegate = self
         loadData()
@@ -92,7 +93,7 @@ class ScreenDetailViewController: UIViewController {
         
         inlineScreenData?.isRecycledView = switchIsRecycledView.isOn
         
-        Storage.instance.saveListOfScreens(list: screenList)
+        Helper.shared.saveListOfScreens(list: screenList)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -142,7 +143,7 @@ extension UIViewController {
                          inlineWidgetdata:InlineWidgetData? = nil,
                          cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
                          actionHandler: ((_ text: InlineWidgetData) -> Void)? = nil) {
-        var _inlineWidgetData = inlineWidgetdata ?? InlineWidgetData();
+        let _inlineWidgetData = inlineWidgetdata ?? InlineWidgetData();
         let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
         alert.addTextField { (textField:UITextField) in
             textField.placeholder = "Position to display"
@@ -218,7 +219,7 @@ extension UIViewController {
         actionHandler: ((_ text: InlineScreenData) -> Void)? = nil) {
     
         let alert = UIAlertController(title: "Screen List", message: "", preferredStyle: .alert)
-            let list = Storage.instance.getListOfScreen()
+            let list = Helper.shared.getListOfScreen()
             for data in list {
                 if(data.screenName != currentData.screenName){
                     
@@ -228,10 +229,6 @@ extension UIViewController {
                     
                 }
             }
-
-        
-    
-
         alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)

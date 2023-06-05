@@ -20,7 +20,7 @@ class CustomScreenViewController: UIViewController {
         super.viewDidLoad()
         tableViewScreen.dataSource = self
         tableViewScreen.delegate = self
-        screenList = Storage.instance.getListOfScreen()
+        screenList = Helper.shared.getListOfScreen()
     }
 
     @IBAction func btnAddScreen(_ sender: Any) {
@@ -29,7 +29,7 @@ class CustomScreenViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        screenList = Storage.instance.getListOfScreen()
+        screenList = Helper.shared.getListOfScreen()
         tableViewScreen.reloadData()
     }
     
@@ -62,14 +62,14 @@ extension CustomScreenViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     @objc func openListScreen(sender:UIButton){
-        Storage.instance.currentSelectedScreen = screenList[sender.tag]
+        Helper.shared.currentSelectedScreen = screenList[sender.tag]
         let vc = storyboard?.instantiateViewController(withIdentifier: "InlineListViewController")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @objc func openDetailScreen(position : Int) {
-         Storage.instance.saveListOfScreens(list: self.screenList)
-         Storage.instance.currentInlineScreenDataPosition = position
+         Helper.shared.saveListOfScreens(list: self.screenList)
+         Helper.shared.currentInlineScreenDataPosition = position
         let vc = storyboard?.instantiateViewController(withIdentifier: "ScreenDetailViewController")
         vc?.title = "Add Details"
         self.navigationController?.pushViewController(vc!, animated: true)

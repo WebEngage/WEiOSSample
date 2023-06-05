@@ -16,7 +16,6 @@ enum Features : String, CaseIterable {
     case appInbox = "App Inbox"
 }
 
-
 class HomeViewController: UICollectionViewController {
     
     // Array to contain the show the options
@@ -65,19 +64,19 @@ class HomeViewController: UICollectionViewController {
         let item = Features(rawValue: items[indexPath.row])
         switch item {
         case .trackEvents:
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Events", bundle: nil)
-            if let eventsViewController = storyBoard.instantiateViewController(withIdentifier: "EventsViewController") as? EventsViewController {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            if let eventsViewController = storyBoard.instantiateViewController(withIdentifier: "EventsViewController") as? TrackEventsViewController {
                 navigationController?.pushViewController(eventsViewController, animated: true)
             }
         case .trackScreens:
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Screens", bundle: nil)
-            if let trackScreensViewController = storyBoard.instantiateViewController(withIdentifier: "ScreensViewController") as? ScreensViewController {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            if let trackScreensViewController = storyBoard.instantiateViewController(withIdentifier: "ScreensViewController") as? TrackScreensViewController {
                 navigationController?.pushViewController(trackScreensViewController, animated: true)
             }
         case .userAttributes:
-            let storyBoard: UIStoryboard = UIStoryboard(name: "UserProfile", bundle: nil)
-            if let userProfileViewController = storyBoard.instantiateViewController(withIdentifier: "UserProfileViewController") as? UserProfileViewController {
-                navigationController?.pushViewController(userProfileViewController, animated: true)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            if let userAttributesViewController = storyBoard.instantiateViewController(withIdentifier: "UserAttributesViewController") as? UserAttributesViewController {
+                navigationController?.pushViewController(userAttributesViewController, animated: true)
             }
         case .InLine:
             print("Inline")

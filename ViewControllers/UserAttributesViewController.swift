@@ -1,5 +1,5 @@
 //
-//  UserProfileViewController.swift
+//  UserAttributesViewController.swift
 //  WebEngageExampleSwift
 //
 //  Created by Yogesh Singh on 30/10/18.
@@ -9,7 +9,7 @@
 import UIKit
 import WebEngage
 
-class UserProfileViewController: UIViewController {
+class UserAttributesViewController: UIViewController {
     
     // Switch Declarations
     @IBOutlet weak var inAppSwitch: UISwitch!
@@ -96,55 +96,55 @@ class UserProfileViewController: UIViewController {
 
 
 // MARK: - Regular Attributes Handlers
-extension UserProfileViewController {
+extension UserAttributesViewController {
 
     @objc func saveTapped() {
-        if !(firstNameField.text?.isEmpty)! {
+        if !(firstNameField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setFirstName(firstNameField.text)
             UserDefaults.standard.set(firstNameField.text, forKey: "firstName")
         }
 
-        if !(lastNameField.text?.isEmpty)! {
+        if !(lastNameField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setLastName(lastNameField.text)
             UserDefaults.standard.set(lastNameField.text, forKey: "lastName")
         }
 
-        if !(emailField.text?.isEmpty)! {
+        if !(emailField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setEmail(emailField.text)
             UserDefaults.standard.set(emailField.text, forKey: "email")
         }
 
-        if !(hashedEmailField.text?.isEmpty)! {
+        if !(hashedEmailField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setHashedEmail(hashedEmailField.text)
             UserDefaults.standard.set(hashedEmailField.text, forKey: "hashedEmail")
         }
 
-        if !(phoneField.text?.isEmpty)! {
+        if !(phoneField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setPhone(phoneField.text)
             UserDefaults.standard.set(phoneField.text, forKey: "phone")
         }
 
-        if !(hashedPhoneField.text?.isEmpty)! {
+        if !(hashedPhoneField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setHashedPhone(hashedPhoneField.text)
             UserDefaults.standard.set(hashedPhoneField.text, forKey: "hashedPhone")
         }
 
-        if !(companyField.text?.isEmpty)! {
+        if !(companyField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setCompany(companyField.text)
             UserDefaults.standard.set(companyField.text, forKey: "company")
         }
 
-        if !(birthDateField.text?.isEmpty)! {
+        if !(birthDateField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setBirthDateString(birthDateField.text)
             UserDefaults.standard.set(birthDateField.text, forKey: "DOB")
         }
 
-        if !(genderField.text?.isEmpty)! {
+        if !(genderField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
             WebEngage.sharedInstance()?.user.setGender(genderField.text)
             UserDefaults.standard.set(genderField.text, forKey: "gender")
         }
 
-        if !(locationField.text?.isEmpty)! {
+        if !(locationField.text?.replacingOccurrences(of: " ", with: "").isEmpty)! {
 
             guard let locationArray = locationField.text?.split(separator: ",").map({ String($0) }),
                 locationArray.count == 2,
@@ -178,12 +178,11 @@ extension UserProfileViewController {
 
 
 // MARK: - Opt-In Channels Handlers
-extension UserProfileViewController {
+extension UserAttributesViewController {
 
     @IBAction func pushOptInChanged(_ sender: UISwitch) {
         WebEngage.sharedInstance()?.user.setOptInStatusFor(.push, status: sender.isOn)
         UserDefaults.standard.set(sender.isOn, forKey: "push")
-        
     }
 
     @IBAction func inAppOptInChanged(_ sender: UISwitch) {
@@ -215,7 +214,7 @@ extension UserProfileViewController {
 
 
 // MARK: - Delete Custom Attributes Handlers
-extension UserProfileViewController {
+extension UserAttributesViewController {
 
     @IBAction func deleteCustomTapped(_ sender: UIButton) {
 
@@ -252,7 +251,7 @@ extension UserProfileViewController {
 
         alert.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: { (_) in
 
-            guard let text = alert.textFields![0].text, !text.isEmpty else {
+            guard let text = alert.textFields![0].text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
                 self.showDeleteFailureAlert(for: alert.textFields![0].text ?? "nil")
                 return
             }
@@ -309,7 +308,7 @@ extension UserProfileViewController {
 
 
 // MARK: - Add Custom Attributes Handlers
-extension UserProfileViewController {
+extension UserAttributesViewController {
 
     @IBAction func addCustomTapped(_ sender: UIButton) {
 
@@ -396,7 +395,7 @@ extension UserProfileViewController {
             let key = alert.textFields![0].text
             let value = alert.textFields![1].text
 
-            guard (key != nil), (value != nil), !(key?.isEmpty)!, !(value?.isEmpty)! else {
+            guard (key != nil), (value != nil), !(key?.replacingOccurrences(of: " ", with: "").isEmpty)!, !(value?.replacingOccurrences(of: " ", with: "").isEmpty)! else {
 
                 self.showFailAlert(key: key, value: value)
                 return
