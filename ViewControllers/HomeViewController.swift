@@ -25,29 +25,44 @@ class HomeViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), primaryAction: nil, menu: menuItems())
+        setUpRightBarButton()
     }
+    
+    func setUpRightBarButton() {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "person.circle"), for: .normal)
+        button.addTarget(self, action: #selector(showLogoutOptions(_:)), for: .touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    // To setup alert by which user can log out and see their username.
+    
+    @objc func showLogoutOptions(_ sender: UIBarButtonItem) {
+        if let cuid = UserDefaults.standard.string(forKey: Keys.cuid.rawValue){
+            let alertController = UIAlertController(title: "Logged in as: \(cuid)", message: "Do you want to log out ?", preferredStyle: .alert)
+            let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { _ in
+                // Handle logout
+                WebEngage.sharedInstance()?.user.logout()
+                UserDefaults.standard.removeObject(forKey: Keys.cuid.rawValue)
+                Helper.shared.setInitialViewController()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.addAction(logoutAction)
+        
+            if let popoverPresentationController = alertController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem
+            }
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Sample App"
         self.navigationItem.backButtonTitle = ""
-    }
-    
-    // To setup the menu by which user can log out and see their username.
-    
-    private func menuItems() -> UIMenu? {
-        if let cuid = UserDefaults.standard.string(forKey: Keys.cuid.rawValue){
-            let addMenuItems = UIMenu(title: "Logged in as: \(cuid)",options: .displayInline, children: [
-                UIAction (title: "Logout") { (_) in
-                    WebEngage.sharedInstance()?.user.logout()
-                    UserDefaults.standard.removeObject(forKey: Keys.cuid.rawValue)
-                    Helper.shared.setInitialViewController()
-                }
-            ])
-            return addMenuItems
-        }
-        return nil
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
