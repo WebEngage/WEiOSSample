@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HwU-ff-vwM">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +25,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Screen">
-                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                    <color key="baseBackgroundColor" name="themeColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnAddScreen:" destination="Oxv-yo-e16" eventType="touchUpInside" id="2M6-fE-FuL"/>
@@ -62,7 +64,7 @@
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="filled" title="Open">
-                                                                                <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                                                                <color key="baseBackgroundColor" name="themeColor"/>
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                     </subviews>
@@ -228,7 +230,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="169" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Add Data">
-                                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                                    <color key="baseBackgroundColor" name="themeColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="addData:" destination="yjq-wb-Y5J" eventType="touchUpInside" id="0q5-yT-GFU"/>
@@ -238,7 +240,7 @@
                                                 <rect key="frame" x="199" y="0.0" width="169" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Save">
-                                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                                    <color key="baseBackgroundColor" name="themeColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="saveForm:" destination="yjq-wb-Y5J" eventType="touchUpInside" id="mV5-xm-PFL"/>
@@ -310,7 +312,7 @@
                                                                             <rect key="frame" x="0.0" y="138" width="328" height="24"/>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="filled" title="Edit">
-                                                                                <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                                                                <color key="baseBackgroundColor" name="themeColor"/>
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                     </subviews>
@@ -532,6 +534,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="themeColor">
+            <color red="0.54509803921568623" green="0.42745098039215684" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

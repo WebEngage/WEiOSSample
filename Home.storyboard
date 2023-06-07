@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TkP-z9-hCp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,12 +35,15 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ST-J5-kIa">
                                 <rect key="frame" x="139.5" y="122" width="96" height="30"/>
+                                <color key="backgroundColor" name="themeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="0xa-cN-kFC"/>
                                     <constraint firstAttribute="height" constant="30" id="nXO-uA-XRs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Track Event"/>
+                                <state key="normal" title="Track Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="trackEventTapped:" destination="TkP-z9-hCp" eventType="touchUpInside" id="SWP-CV-kew"/>
                                 </connections>
@@ -46,7 +51,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-xB-1DG">
                                 <rect key="frame" x="109.5" y="204" width="156" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="Track Custom Event"/>
+                                <state key="normal" title="Track Custom Event">
+                                    <color key="titleColor" name="themeColor"/>
+                                </state>
                                 <connections>
                                     <action selector="trackCustomEventTapped:" destination="TkP-z9-hCp" eventType="touchUpInside" id="zGS-5M-wzz"/>
                                 </connections>
@@ -129,7 +136,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDc-3W-Doe">
                                 <rect key="frame" x="115.5" y="300" width="144" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="themeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="144" id="iFM-AQ-gyj"/>
                                 </constraints>
@@ -144,14 +151,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjI-a2-30u">
                                 <rect key="frame" x="102.5" y="378" width="170" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Enter Custom Attribute"/>
+                                <state key="normal" title="Enter Custom Attribute">
+                                    <color key="titleColor" name="themeColor"/>
+                                </state>
                                 <connections>
                                     <action selector="customAttributeTapped:" destination="IVa-oA-32E" eventType="touchUpInside" id="5w5-UB-co9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="590-jt-XMj">
                                 <rect key="frame" x="115.5" y="156" width="144" height="32"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="themeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="144" id="SnJ-Fm-UEy"/>
                                 </constraints>
@@ -205,22 +214,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCV-Go-NMx">
-                                                <rect key="frame" x="16" y="0.0" width="337.5" height="776.5"/>
+                                                <rect key="frame" x="37.5" y="0.0" width="300" height="776.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOV-le-YKf">
-                                                        <rect key="frame" x="0.0" y="72" width="337.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="72" width="300" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-mu-Mad">
-                                                        <rect key="frame" x="16" y="192.5" width="305.5" height="20.5"/>
+                                                        <rect key="frame" x="16" y="192.5" width="268" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-4P-G2C">
-                                                        <rect key="frame" x="0.0" y="285" width="337.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="285" width="300" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -242,12 +251,13 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="xCV-Go-NMx" secondAttribute="trailing" constant="16" id="OZh-gl-496"/>
-                                            <constraint firstItem="xCV-Go-NMx" firstAttribute="width" secondItem="6G2-jc-6Yj" secondAttribute="width" multiplier="0.9" id="V75-kj-kbX"/>
+                                            <constraint firstItem="xCV-Go-NMx" firstAttribute="centerX" secondItem="6G2-jc-6Yj" secondAttribute="centerX" id="Whj-Nl-0go"/>
                                             <constraint firstAttribute="bottom" secondItem="xCV-Go-NMx" secondAttribute="bottom" id="ZIC-st-hzb"/>
                                             <constraint firstItem="xCV-Go-NMx" firstAttribute="top" secondItem="6G2-jc-6Yj" secondAttribute="top" id="eaY-kb-sBD"/>
-                                            <constraint firstItem="xCV-Go-NMx" firstAttribute="leading" secondItem="6G2-jc-6Yj" secondAttribute="leading" constant="16" id="qXU-xT-T0C"/>
+                                            <constraint firstItem="xCV-Go-NMx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6G2-jc-6Yj" secondAttribute="leading" constant="37.5" id="hsu-eV-dTC"/>
+                                            <constraint firstItem="xCV-Go-NMx" firstAttribute="width" secondItem="6G2-jc-6Yj" secondAttribute="width" multiplier="0.8" id="pF8-Pe-dKs"/>
                                             <constraint firstItem="xCV-Go-NMx" firstAttribute="height" secondItem="6G2-jc-6Yj" secondAttribute="height" multiplier="1.19982" id="sdn-6i-wVG"/>
+                                            <constraint firstAttribute="trailing" secondItem="xCV-Go-NMx" secondAttribute="trailing" constant="37.5" id="z5f-kk-52J"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
@@ -256,6 +266,7 @@
                                     <constraint firstAttribute="trailing" secondItem="6G2-jc-6Yj" secondAttribute="trailing" id="0dX-44-ndK"/>
                                     <constraint firstItem="6G2-jc-6Yj" firstAttribute="leading" secondItem="kAl-2d-0xc" secondAttribute="leading" id="Qvz-Xg-RBq"/>
                                     <constraint firstItem="6G2-jc-6Yj" firstAttribute="top" secondItem="kAl-2d-0xc" secondAttribute="top" id="Ygh-cT-SAi"/>
+                                    <constraint firstItem="6G2-jc-6Yj" firstAttribute="width" secondItem="kAl-2d-0xc" secondAttribute="width" id="aY8-jb-yGD"/>
                                     <constraint firstAttribute="bottom" secondItem="6G2-jc-6Yj" secondAttribute="bottom" id="jhe-oA-bId"/>
                                 </constraints>
                             </view>
@@ -278,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNJ-Ax-C61" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="53"/>
+            <point key="canvasLocation" x="712.79999999999995" y="52.623688155922046"/>
         </scene>
         <!--User Attributes View Controller-->
         <scene sceneID="Zuh-5K-Zlo">
@@ -317,6 +328,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s81-wI-1ee">
                                         <rect key="frame" x="314" y="506" width="51" height="31"/>
+                                        <color key="onTintColor" name="themeColor"/>
                                         <connections>
                                             <action selector="inAppOptInChanged:" destination="aRq-2U-ylq" eventType="valueChanged" id="aZw-IC-yz6"/>
                                         </connections>
@@ -355,6 +367,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dR6-to-T9h">
                                         <rect key="frame" x="314" y="545" width="51" height="31"/>
+                                        <color key="onTintColor" name="themeColor"/>
                                         <connections>
                                             <action selector="smsOptInChanged:" destination="aRq-2U-ylq" eventType="valueChanged" id="qPI-P5-dtn"/>
                                         </connections>
@@ -376,6 +389,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="StC-Ul-S9w" userLabel="Email">
                                         <rect key="frame" x="314" y="584" width="51" height="31"/>
+                                        <color key="onTintColor" name="themeColor"/>
                                         <connections>
                                             <action selector="emailOptInChanged:" destination="aRq-2U-ylq" eventType="valueChanged" id="lmF-HL-Dcx"/>
                                         </connections>
@@ -396,9 +410,10 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7o-5C-OLf">
                                         <rect key="frame" x="192" y="411" width="164" height="48"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <state key="normal" title="Delete Custom Attribute">
-                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
                                         <connections>
                                             <action selector="deleteCustomTapped:" destination="aRq-2U-ylq" eventType="touchUpInside" id="Zy1-db-mFt"/>
@@ -432,6 +447,7 @@
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5y-EA-OTE">
                                         <rect key="frame" x="314" y="467" width="51" height="31"/>
+                                        <color key="onTintColor" name="themeColor"/>
                                         <connections>
                                             <action selector="pushOptInChanged:" destination="aRq-2U-ylq" eventType="valueChanged" id="tN0-me-uZ8"/>
                                         </connections>
@@ -460,12 +476,16 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-aq-Iq3">
                                         <rect key="frame" x="20" y="411" width="164" height="48"/>
+                                        <color key="backgroundColor" name="themeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Raq-sJ-bdM"/>
                                             <constraint firstAttribute="width" constant="164" id="Rxp-QO-JeG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <state key="normal" title="Add Custom Attribute"/>
+                                        <state key="normal" title="Add Custom Attribute">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="addCustomTapped:" destination="aRq-2U-ylq" eventType="touchUpInside" id="Hau-ZC-Ghs"/>
                                         </connections>
@@ -501,6 +521,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B87-hc-wZO" userLabel="WhatsApp">
                                         <rect key="frame" x="314" y="622" width="51" height="31"/>
+                                        <color key="onTintColor" name="themeColor"/>
                                         <connections>
                                             <action selector="whatsAppOptInChanged:" destination="aRq-2U-ylq" eventType="valueChanged" id="SFg-F3-VSJ"/>
                                         </connections>
@@ -693,8 +714,17 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="themeColor">
+            <color red="0.54509803921568623" green="0.42745098039215684" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

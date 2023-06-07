@@ -30,6 +30,7 @@ class HomeViewController: UICollectionViewController {
     
     func setUpRightBarButton() {
         let button = UIButton(type: .system)
+        button.tintColor = UIColor(named: "themeColor")
         button.setImage(UIImage(systemName: "person.circle"), for: .normal)
         button.addTarget(self, action: #selector(showLogoutOptions(_:)), for: .touchUpInside)
         let barButtonItem = UIBarButtonItem(customView: button)
