@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1089105702830-o4ah6f174v2cbkklu76ie42j5gl0od9a</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -39,8 +50,10 @@
 	<key>WEGEnvironment</key>
 	<string>DEFAULT</string>
 	<key>WEGLicenseCode</key>
-	<string>LICENSE_CODE</string>
+	<string>&quot;LICENSE_CODE&quot;</string>
 	<key>WEGLogLevel</key>
 	<string>VERBOSE</string>
+	<key>WEGManualIntegration</key>
+	<false/>
 </dict>
 </plist>
