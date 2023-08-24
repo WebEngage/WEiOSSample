@@ -37,8 +37,15 @@
 		D35556982A28A6C000CA5ED5 /* NotificationViewController.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D355568C2A28A6C000CA5ED5 /* NotificationViewController.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D355569E2A28B7AB00CA5ED5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355567F2A28A5F500CA5ED5 /* NotificationService.swift */; };
 		D36FFE062A3097C000A7FA9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D36FFE052A3097C000A7FA9B /* GoogleService-Info.plist */; };
-		D3F145852A30A28300DE4B76 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D3F145842A30A28300DE4B76 /* FirebaseAnalytics */; };
-		D3F145872A30A28300DE4B76 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D3F145862A30A28300DE4B76 /* FirebaseMessaging */; };
+		D3E673382A97D36F009337BB /* LiveActivityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E673372A97D36F009337BB /* LiveActivityMethods.swift */; };
+		D3E6733E2A97D666009337BB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E672E42A97BAA6009337BB /* WidgetKit.framework */; };
+		D3E6733F2A97D666009337BB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E672E62A97BAA6009337BB /* SwiftUI.framework */; };
+		D3E673422A97D666009337BB /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E673412A97D666009337BB /* LiveActivityBundle.swift */; };
+		D3E673442A97D666009337BB /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E673432A97D666009337BB /* LiveActivityLiveActivity.swift */; };
+		D3E673492A97D668009337BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E673482A97D668009337BB /* Assets.xcassets */; };
+		D3E6734B2A97D668009337BB /* LiveActivity.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D3E673472A97D666009337BB /* LiveActivity.intentdefinition */; };
+		D3E6734C2A97D668009337BB /* LiveActivity.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D3E673472A97D666009337BB /* LiveActivity.intentdefinition */; };
+		D3E6734F2A97D668009337BB /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D3E6733D2A97D666009337BB /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D3F76A672A29D95C00F33F82 /* CallBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F76A662A29D95C00F33F82 /* CallBackViewController.swift */; };
 		D3F76A6F2A2A130C00F33F82 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F76A6E2A2A130C00F33F82 /* Helper.swift */; };
 		D3F76A7A2A2A19AF00F33F82 /* TrackScreensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F76A792A2A19AF00F33F82 /* TrackScreensViewController.swift */; };
@@ -61,6 +68,13 @@
 			remoteGlobalIDString = D355568B2A28A6C000CA5ED5;
 			remoteInfo = NotificationViewController;
 		};
+		D3E6734D2A97D668009337BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E4111C02A25A74100FAE53E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3E6733C2A97D666009337BB;
+			remoteInfo = LiveActivityExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				D3E6734F2A97D668009337BB /* LiveActivityExtension.appex in Embed Foundation Extensions */,
 				D35556982A28A6C000CA5ED5 /* NotificationViewController.appex in Embed Foundation Extensions */,
 				D35556752A28A5D400CA5ED5 /* NotificationService.appex in Embed Foundation Extensions */,
 			);
@@ -121,6 +136,15 @@
 		D355569D2A28A72200CA5ED5 /* NotificationViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationViewController-Bridging-Header.h"; sourceTree = "<group>"; };
 		D36FFE052A3097C000A7FA9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3970AB080A956906064A236 /* libPods-NotificationService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E672E42A97BAA6009337BB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D3E672E62A97BAA6009337BB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D3E673372A97D36F009337BB /* LiveActivityMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveActivityMethods.swift; sourceTree = "<group>"; };
+		D3E6733D2A97D666009337BB /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E673412A97D666009337BB /* LiveActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityBundle.swift; sourceTree = "<group>"; };
+		D3E673432A97D666009337BB /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
+		D3E673472A97D666009337BB /* LiveActivity.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = LiveActivity.intentdefinition; sourceTree = "<group>"; };
+		D3E673482A97D668009337BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3E6734A2A97D668009337BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3F76A662A29D95C00F33F82 /* CallBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBackViewController.swift; sourceTree = "<group>"; };
 		D3F76A6E2A2A130C00F33F82 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		D3F76A792A2A19AF00F33F82 /* TrackScreensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackScreensViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F145872A30A28300DE4B76 /* FirebaseMessaging in Frameworks */,
-				D3F145852A30A28300DE4B76 /* FirebaseAnalytics in Frameworks */,
 				110559C744BF00C2B99338DD /* libPods-WebEngageSampleApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +179,15 @@
 				D355568E2A28A6C000CA5ED5 /* UserNotificationsUI.framework in Frameworks */,
 				D355568D2A28A6C000CA5ED5 /* UserNotifications.framework in Frameworks */,
 				346640E7A302F0212090EA03 /* libPods-NotificationViewController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E6733A2A97D666009337BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E6733F2A97D666009337BB /* SwiftUI.framework in Frameworks */,
+				D3E6733E2A97D666009337BB /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +213,7 @@
 				3E4111CA2A25A74100FAE53E /* WebEngageSampleApp */,
 				D355567E2A28A5F500CA5ED5 /* NotificationService */,
 				D355568F2A28A6C000CA5ED5 /* NotificationViewController */,
+				D3E673402A97D666009337BB /* LiveActivity */,
 				3E4111C92A25A74100FAE53E /* Products */,
 				2244D76B6777DE8C722C9A10 /* Pods */,
 				54BC3D50BBE67BB4EFBF3719 /* Frameworks */,
@@ -194,6 +226,7 @@
 				3E4111C82A25A74100FAE53E /* WebEngageSampleApp.app */,
 				D35556692A28A5D400CA5ED5 /* NotificationService.appex */,
 				D355568C2A28A6C000CA5ED5 /* NotificationViewController.appex */,
+				D3E6733D2A97D666009337BB /* LiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +289,7 @@
 			children = (
 				3E4111CB2A25A74100FAE53E /* AppDelegate.swift */,
 				D3F76A6E2A2A130C00F33F82 /* Helper.swift */,
+				D3E673372A97D36F009337BB /* LiveActivityMethods.swift */,
 				3E4111CD2A25A74100FAE53E /* SceneDelegate.swift */,
 				3E4111D62A25A74200FAE53E /* LaunchScreen.storyboard */,
 			);
@@ -271,6 +305,8 @@
 				D3970AB080A956906064A236 /* libPods-NotificationService.a */,
 				5FBBD4C94A5C27E01D3A33F0 /* libPods-NotificationViewController.a */,
 				79B974E2DE9BC9654217EB52 /* libPods-WebEngageSampleApp.a */,
+				D3E672E42A97BAA6009337BB /* WidgetKit.framework */,
+				D3E672E62A97BAA6009337BB /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -345,6 +381,18 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		D3E673402A97D666009337BB /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				D3E673412A97D666009337BB /* LiveActivityBundle.swift */,
+				D3E673432A97D666009337BB /* LiveActivityLiveActivity.swift */,
+				D3E673472A97D666009337BB /* LiveActivity.intentdefinition */,
+				D3E673482A97D668009337BB /* Assets.xcassets */,
+				D3E6734A2A97D668009337BB /* Info.plist */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 		D3F76A7B2A2A1E3600F33F82 /* AppInbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,11 +422,10 @@
 			dependencies = (
 				D35556742A28A5D400CA5ED5 /* PBXTargetDependency */,
 				D35556972A28A6C000CA5ED5 /* PBXTargetDependency */,
+				D3E6734E2A97D668009337BB /* PBXTargetDependency */,
 			);
 			name = WebEngageSampleApp;
 			packageProductDependencies = (
-				D3F145842A30A28300DE4B76 /* FirebaseAnalytics */,
-				D3F145862A30A28300DE4B76 /* FirebaseMessaging */,
 			);
 			productName = WebEngageSampleApp;
 			productReference = 3E4111C82A25A74100FAE53E /* WebEngageSampleApp.app */;
@@ -420,6 +467,23 @@
 			productReference = D355568C2A28A6C000CA5ED5 /* NotificationViewController.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D3E6733C2A97D666009337BB /* LiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3E673502A97D668009337BB /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */;
+			buildPhases = (
+				D3E673392A97D666009337BB /* Sources */,
+				D3E6733A2A97D666009337BB /* Frameworks */,
+				D3E6733B2A97D666009337BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiveActivityExtension;
+			productName = LiveActivityExtension;
+			productReference = D3E6733D2A97D666009337BB /* LiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -440,6 +504,9 @@
 					D355568B2A28A6C000CA5ED5 = {
 						CreatedOnToolsVersion = 14.3;
 					};
+					D3E6733C2A97D666009337BB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 3E4111C32A25A74100FAE53E /* Build configuration list for PBXProject "WebEngageSampleApp" */;
@@ -452,7 +519,6 @@
 			);
 			mainGroup = 3E4111BF2A25A74100FAE53E;
 			packageReferences = (
-				D3F145832A30A28300DE4B76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 3E4111C92A25A74100FAE53E /* Products */;
 			projectDirPath = "";
@@ -461,6 +527,7 @@
 				3E4111C72A25A74100FAE53E /* WebEngageSampleApp */,
 				D35556682A28A5D400CA5ED5 /* NotificationService */,
 				D355568B2A28A6C000CA5ED5 /* NotificationViewController */,
+				D3E6733C2A97D666009337BB /* LiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -492,6 +559,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35556942A28A6C000CA5ED5 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E6733B2A97D666009337BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E673492A97D668009337BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +669,7 @@
 				3E4111CC2A25A74100FAE53E /* AppDelegate.swift in Sources */,
 				D35556632A289B7600CA5ED5 /* WEAppDelegateExtension.swift in Sources */,
 				3EF366552A25DC1F0005862E /* CustomCVC.swift in Sources */,
+				D3E673382A97D36F009337BB /* LiveActivityMethods.swift in Sources */,
 				3E4111CE2A25A74100FAE53E /* SceneDelegate.swift in Sources */,
 				D3F76A6F2A2A130C00F33F82 /* Helper.swift in Sources */,
 				3E4111EC2A25D9CF00FAE53E /* HomeViewController.swift in Sources */,
@@ -604,6 +680,7 @@
 				3EDCB7F72A260D3600F24C6A /* ScreenDetailViewController.swift in Sources */,
 				3EDCB7DE2A26034700F24C6A /* TrackEventsViewController.swift in Sources */,
 				3EDCB7FA2A260D3600F24C6A /* CustomScreenViewController.swift in Sources */,
+				D3E6734C2A97D668009337BB /* LiveActivity.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +700,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3E673392A97D666009337BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E673422A97D666009337BB /* LiveActivityBundle.swift in Sources */,
+				D3E673442A97D666009337BB /* LiveActivityLiveActivity.swift in Sources */,
+				D3E6734B2A97D668009337BB /* LiveActivity.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -635,6 +722,11 @@
 			isa = PBXTargetDependency;
 			target = D355568B2A28A6C000CA5ED5 /* NotificationViewController */;
 			targetProxy = D35556962A28A6C000CA5ED5 /* PBXContainerItemProxy */;
+		};
+		D3E6734E2A97D668009337BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3E6733C2A97D666009337BB /* LiveActivityExtension */;
+			targetProxy = D3E6734D2A97D668009337BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -799,14 +891,14 @@
 				CODE_SIGN_ENTITLEMENTS = WebEngageSampleApp/WebEngageSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S7X7V9YPX7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebEngageSampleApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -833,14 +925,14 @@
 				CODE_SIGN_ENTITLEMENTS = WebEngageSampleApp/WebEngageSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S7X7V9YPX7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebEngageSampleApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -866,6 +958,7 @@
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -893,6 +986,7 @@
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -920,6 +1014,7 @@
 				INFOPLIST_FILE = NotificationViewController/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationViewController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -947,6 +1042,7 @@
 				INFOPLIST_FILE = NotificationViewController/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationViewController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -958,6 +1054,60 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NotificationViewController/NotificationViewController-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D3E673512A97D668009337BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S7X7V9YPX7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.webEngage.prodSwift.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3E673522A97D668009337BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S7X7V9YPX7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.webEngage.prodSwift.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1002,31 +1152,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D3E673502A97D668009337BB /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E673512A97D668009337BB /* Debug */,
+				D3E673522A97D668009337BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D3F145832A30A28300DE4B76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D3F145842A30A28300DE4B76 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D3F145832A30A28300DE4B76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		D3F145862A30A28300DE4B76 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D3F145832A30A28300DE4B76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E4111C02A25A74100FAE53E /* Project object */;
 }

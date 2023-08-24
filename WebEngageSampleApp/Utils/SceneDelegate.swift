@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebEngage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -42,7 +43,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
+        print("came here")
+    }
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        print("came here")
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        guard let url = URLContexts.first?.url else { return }
+        if url.absoluteString.contains("pizza") {
+            WebEngage.sharedInstance().analytics.trackEvent(withName: "DYNAMIC ISLAND REGISTERED")
+            print("CAME HERE")
+            
+        }
+    }
 }
 

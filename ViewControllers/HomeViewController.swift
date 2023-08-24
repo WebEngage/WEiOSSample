@@ -7,6 +7,7 @@
 
 import UIKit
 import WebEngage
+import ActivityKit
 
 enum Features : String, CaseIterable {
     case trackEvents = "Track Events"
@@ -14,12 +15,12 @@ enum Features : String, CaseIterable {
     case userAttributes = "User Attributes"
     case InLine = "InLine"
     case appInbox = "App Inbox"
+    case liveActivity = "Trigger Live activity"
 }
 
 class HomeViewController: UICollectionViewController {
     
     // Array to contain the show the options
-    
     let items : [String] = Features.allCases.map { $0.rawValue }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +37,6 @@ class HomeViewController: UICollectionViewController {
         let barButtonItem = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButtonItem
     }
-    
     // To setup alert by which user can log out and see their username.
     
     @objc func showLogoutOptions(_ sender: UIBarButtonItem) {
@@ -58,8 +58,6 @@ class HomeViewController: UICollectionViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Sample App"
@@ -106,7 +104,8 @@ class HomeViewController: UICollectionViewController {
                 navigationController?.pushViewController(appInboxViewController, animated: true)
             }
             print("AppInbox")
-            
+        case .liveActivity:
+            LiveActivityMethods.shared.startDeliveryOrder(controller: self)
         default :
             print("Invalid item")
         }
