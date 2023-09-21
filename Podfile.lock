@@ -1,0 +1,36 @@
+PODS:
+  - IQKeyboardManager (6.5.12)
+  - WebEngage (6.4.3)
+  - WebEngageAppEx/ContentExtension (1.0.2):
+    - WebEngageAppEx/CoreApi
+  - WebEngageAppEx/CoreApi (1.0.2)
+  - WebEngageBannerPush (1.0.2):
+    - WebEngage (>= 6.4.0)
+  - WEPersonalization (1.2.3):
+    - WebEngage (>= 6.3)
+
+DEPENDENCIES:
+  - IQKeyboardManager (~> 6.5)
+  - WebEngage
+  - WebEngageAppEx/ContentExtension
+  - WebEngageBannerPush
+  - WEPersonalization
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - WebEngage
+    - WebEngageAppEx
+    - WebEngageBannerPush
+    - WEPersonalization
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
+  WebEngage: ca7e05aac25af42ec35772d95b5daba000841951
+  WebEngageAppEx: 48ddb2095e24592e812e046a22681d497b9a20e2
+  WebEngageBannerPush: 470a5caa6978a429ba60a47ca249a90d271a7b1c
+  WEPersonalization: 1ac821d0fc79a7b5056c067a72117a4d632bc796
+
+PODFILE CHECKSUM: 4d7e95aa6bb33f27a7400374a0552371acb9a8de
+
+COCOAPODS: 1.12.1

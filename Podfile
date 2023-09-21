@@ -4,6 +4,7 @@ target 'WebEngageSampleApp' do
  
   pod 'WebEngage'
   pod 'WEPersonalization'
+  pod 'IQKeyboardManager', '~> 6.5'
   
 end
 
